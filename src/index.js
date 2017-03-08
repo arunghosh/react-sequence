@@ -1,2 +1,2 @@
-import Menu from './Menu.jsx';
-export default Menu;
+import SequenceForm from './SequenceForm.jsx';
+export default SequenceForm;
