@@ -7,7 +7,6 @@ let
   output = {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: 'bundle.js'
   };
 
 if (process.env.NODE_ENV === 'dev') {
@@ -15,7 +14,6 @@ if (process.env.NODE_ENV === 'dev') {
   output = {
     path: path.join(__dirname, 'example'),
     publicPath: '/example/',
-    filename: 'bundle.js'
   };
 }
 
@@ -23,7 +21,11 @@ console.log(entry, output);
 
 module.exports = {
   entry: entry,
-  output: output, 
+  output: Object.assign(output, {
+    library: 'react-input-pin',
+    libraryTarget: 'umd', // universal module definition
+    filename: 'bundle.js'
+  }),
   resolve: {
     extensions: ['.js', '.jsx']
   },
