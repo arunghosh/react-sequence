@@ -1,12 +1,12 @@
 {
-  "name": "webpack-react-lib-starter",
+  "name": "react-sequence",
   "version": "0.1.0",
   "description": "",
   "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=dev webpack-dev-server",
-    "build": "rimraf dist && NODE_ENV=prod webpack --watch"
+    "build": "rimraf dist && NODE_ENV=prod webpack"
   },
   "author": "Arun Ghosh",
   "license": "ISC",
