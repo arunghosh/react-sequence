@@ -12,6 +12,9 @@ class SeqenceForm extends Component {
     this.gotoKey = this.gotoKey.bind(this);
   }
 
+  /**
+   * Goto previous component
+   */
   gotoPrev() {
     if (this.state.currentIndex === 0) return;
     const currentIndex = this.state.currentIndex - 1;
@@ -20,6 +23,9 @@ class SeqenceForm extends Component {
     });
   }
 
+  /**
+   * Goto next component
+   */
   gotoNext() {
     if (this.state.currentIndex === this.props.children.length - 1) return;
     const currentIndex = this.state.currentIndex + 1;
@@ -28,8 +34,12 @@ class SeqenceForm extends Component {
     });
   }
 
+  /**
+   * Goto component specified by the key
+   * @param {key} key of the component
+   */
   gotoKey(key) {
-    const currentIndex = this.props.children.findIndex((c) => c.key === key);
+    const currentIndex = this.props.children.findIndex(c => c.key === key);
     if (currentIndex === -1) {
       // element not found
       return;
@@ -62,4 +72,3 @@ SeqenceForm.propTypes = {
 };
 
 export default SeqenceForm;
-
