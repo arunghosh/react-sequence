@@ -1991,6 +1991,7 @@ var SeqenceForm = function (_Component) {
     };
     _this.gotoNext = _this.gotoNext.bind(_this);
     _this.gotoPrev = _this.gotoPrev.bind(_this);
+    _this.gotoKey = _this.gotoKey.bind(_this);
     return _this;
   }
 
@@ -2035,7 +2036,8 @@ var SeqenceForm = function (_Component) {
       var child = this.props.children[this.state.currentIndex];
       var childithProps = _react2.default.cloneElement(child, {
         gotoNext: this.gotoNext,
-        gotoPrev: this.gotoPrev
+        gotoPrev: this.gotoPrev,
+        gotoKey: this.gotoKey
       });
       return _react2.default.createElement(
         'div',
