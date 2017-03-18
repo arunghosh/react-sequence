@@ -1,2 +1,3 @@
-import SequenceForm from './SequenceForm.jsx';
+import SequenceForm from './SequenceForm';
+
 export default SequenceForm;

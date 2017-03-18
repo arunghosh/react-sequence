@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["react-input-pin"] = factory();
+		exports["react-sequence-form"] = factory();
 	else
-		root["react-input-pin"] = factory();
+		root["react-sequence-form"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -1978,8 +1978,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var SeqenceForm = function (_React$Component) {
-  _inherits(SeqenceForm, _React$Component);
+var SeqenceForm = function (_Component) {
+  _inherits(SeqenceForm, _Component);
 
   function SeqenceForm(props) {
     _classCallCheck(this, SeqenceForm);
@@ -1997,7 +1997,7 @@ var SeqenceForm = function (_React$Component) {
   _createClass(SeqenceForm, [{
     key: 'gotoPrev',
     value: function gotoPrev() {
-      if (currentIndex === 0) return;
+      if (this.state.currentIndex === 0) return;
       var currentIndex = this.state.currentIndex - 1;
       this.setState({
         currentIndex: currentIndex
@@ -2006,8 +2006,22 @@ var SeqenceForm = function (_React$Component) {
   }, {
     key: 'gotoNext',
     value: function gotoNext() {
-      if (currentIndex === this.props.children.length - 1) return;
+      if (this.state.currentIndex === this.props.children.length - 1) return;
       var currentIndex = this.state.currentIndex + 1;
+      this.setState({
+        currentIndex: currentIndex
+      });
+    }
+  }, {
+    key: 'gotoKey',
+    value: function gotoKey(key) {
+      var currentIndex = this.props.children.findIndex(function (c) {
+        return c.key === key;
+      });
+      if (currentIndex === -1) {
+        // element not found
+        return;
+      }
       this.setState({
         currentIndex: currentIndex
       });
@@ -2015,6 +2029,9 @@ var SeqenceForm = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      if (!Array.isArray(this.props.children)) {
+        throw new Error('SeqenceForm: The children should be an array');
+      }
       var child = this.props.children[this.state.currentIndex];
       var childithProps = _react2.default.cloneElement(child, {
         gotoNext: this.gotoNext,
@@ -2029,7 +2046,11 @@ var SeqenceForm = function (_React$Component) {
   }]);
 
   return SeqenceForm;
-}(_react2.default.Component);
+}(_react.Component);
+
+SeqenceForm.propTypes = {
+  children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object).isRequired
+};
 
 exports.default = SeqenceForm;
 
