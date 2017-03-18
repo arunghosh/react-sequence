@@ -24,12 +24,29 @@ class SeqenceForm extends React.Component {
     if(currentIndex === this.props.children.length - 1) return;
     const currentIndex = this.state.currentIndex + 1;
     this.setState({
+      currentIndex,
+      key: null
+    });
+  }
+
+  gotoKey(key) {
+    const currentIndex = this.props.children.findIndex(c => {
+      return c.key === key;
+    });
+    if (currentIndex === -1) {
+      // element not found
+      return;
+    }
+    this.setState({
       currentIndex
     });
   }
 
   render() {
-    const child = this.props.children[this.state.currentIndex];
+    let child = this.props.children;
+    if (Array.isArray(this.props.children)) {
+      child = this.props.children[this.state.currentIndex];
+    }
     const childithProps = React.cloneElement(
       child, {
         gotoNext: this.gotoNext,

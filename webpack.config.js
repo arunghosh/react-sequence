@@ -22,7 +22,7 @@ console.log(entry, output);
 module.exports = {
   entry: entry,
   output: Object.assign(output, {
-    library: 'react-input-pin',
+    library: 'react-sequence-form',
     libraryTarget: 'umd', // universal module definition
     filename: 'bundle.js'
   }),

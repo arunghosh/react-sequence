@@ -6,8 +6,7 @@ import Page2 from './Page2';
 
 ReactDOM.render(
   <SeqenceForm>
-    <Page1 />
-    <Page2 />
+    <Page1 key="page1" />
   </SeqenceForm>,
   document.getElementById('app')
 );
