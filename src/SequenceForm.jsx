@@ -9,6 +9,7 @@ class SeqenceForm extends Component {
     };
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrev = this.gotoPrev.bind(this);
+    this.gotoKey = this.gotoKey.bind(this);
   }
 
   gotoPrev() {
@@ -47,6 +48,7 @@ class SeqenceForm extends Component {
       child, {
         gotoNext: this.gotoNext,
         gotoPrev: this.gotoPrev,
+        gotoKey: this.gotoKey,
       },
     );
     return (
