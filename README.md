@@ -12,7 +12,7 @@ React component which can aid navigation of sequence of react components. The se
 npm install --save react-sequence
 ```
 
-##Usage
+## Usage
 
 ```javascript
 import React from 'react';
@@ -31,7 +31,7 @@ ReactDOM.render(
 
 ```
 
-Page2.jsx
+**Page2.jsx**
 ```javascript
 import React from 'react';
 
@@ -48,7 +48,7 @@ function Page2(props) {
 export default Page2
 ```
 
-Page1.jsx
+**Page1.jsx**
 ```javascript
 import React from 'react';
 
