@@ -2,6 +2,8 @@
 
 React component which can aid navigation of sequence of form (via next, previos)
 
+[![Build Status](https://travis-ci.org/arunghosh/react-sequence-form.svg?branch=master)](https://travis-ci.org/arunghosh/react-sequence-form)
+
 ## Installation
 ```
 npm install --save react-sequence
