@@ -1,6 +1,9 @@
 # react-sequence-form
 
-React component which can aid navigation of sequence of form (via next, previos)
+React component which can aid navigation of sequence of react components. The sequence of components will be set as the children(see usage). There are 3 available navigation options now and these will ne injected to the props of the components
+* **gotoNext** - shall navigate to the next component
+* **gotoPrev** - shall navigate to the previous component
+* **gotoKey** - shall navigate to the component specified by the argument
 
 [![Build Status](https://travis-ci.org/arunghosh/react-sequence-form.svg?branch=master)](https://travis-ci.org/arunghosh/react-sequence-form)
 
@@ -20,8 +23,8 @@ import Page2 from './Page2';
 
 ReactDOM.render(
   <SeqenceForm>
-    <Page1 />
-    <Page2 />
+    <Page1 key="page1" />
+    <Page2 key="page2" />
   </SeqenceForm>,
   document.getElementById('app')
 );
@@ -37,7 +40,7 @@ function Page2(props) {
     <div>
       <div>Page 2</div>
       <button onClick={props.gotoPrev}>Prev</button>
-      <button onClick={props.gotoNext}>Next</button>
+      <button onClick={() => props.gotoKey('page1')}>Next</button>
     </div>
   );
 }
