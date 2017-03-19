@@ -1,6 +1,6 @@
 # react-sequence-form
 
-React component which can aid navigation of sequence of react components. The sequence of components will be set as the children(see usage). There are 3 available navigation options now and these will ne injected to the props of the components
+React component which can aid navigation between a set of react components. The sequence of components will be set as the children(see usage). There are 3 available navigation options now and these will ne injected to the props of the components
 * **gotoNext** - shall navigate to the next component
 * **gotoPrev** - shall navigate to the previous component
 * **gotoKey** - shall navigate to the component specified by the argument
