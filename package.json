@@ -1,6 +1,6 @@
 {
   "name": "react-sequence",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "",
   "main": "dist/bundle.js",
   "scripts": {
@@ -10,6 +10,26 @@
   },
   "author": "Arun Ghosh",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arunghosh/react-pin-input"
+  },
+  "keywords": [
+    "pin",
+    "input",
+    "react",
+    "component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arunghosh/react-sequence"
+  },
+  "keywords": [
+    "pin",
+    "input",
+    "react",
+    "component"
+  ],
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-jest": "^19.0.0",
