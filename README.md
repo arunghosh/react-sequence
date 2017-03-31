@@ -5,7 +5,7 @@ React component which can aid navigation between a set of react components. The 
 * **gotoPrev** - shall navigate to the previous component
 * **gotoKey** - shall navigate to the component specified by the argument
 
-[![Build Status](https://travis-ci.org/arunghosh/react-sequence-form.svg?branch=master)](https://travis-ci.org/arunghosh/react-sequence-form)
+[![Build Status](https://travis-ci.org/arunghosh/react-sequence.svg?branch=master)](https://travis-ci.org/arunghosh/react-sequence)
 
 ## Installation
 ```
